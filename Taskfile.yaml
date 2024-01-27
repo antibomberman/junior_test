@@ -1,0 +1,23 @@
+version: '3'
+
+tasks:
+  run:
+    desc: "run server"
+    cmds:
+      - "go run cmd/app/main.go"
+    silent: true
+  migrate:
+    desc: "run migrations"
+    cmds:
+      - "go run cmd/migrator/main.go"
+    silent: true
+  up:
+    desc: "start docker containers"
+    cmds:
+      - "docker-compose up -d"
+    silent: true
+  down:
+    desc: "stop docker containers"
+    cmds:
+      - "docker-compose down"
+    silent: true
